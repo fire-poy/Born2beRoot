@@ -3,6 +3,7 @@ Born2beRoot project 42
 
 EVAL
 
+- [x] signature.txt
 shasum debian11_64bit.vdi
 
 head -n 2 /etc/os-release
