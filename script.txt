@@ -1,0 +1,68 @@
+- [x] SCRIPT
+
+NPROC
+nproc - print the number of processing units available 
+
+last boot
+who -b | awk ‘$2 == “système” {print $3 “ “ $4} 
+
+cpu load
+#cpul=$(awk '$1 == "cpu" {printf("%.2f", 100*($2+$4)/($2+$4+$5))}' /proc/stat)
+
+ cut -c 9-
+enleve le premier 9 caracteres 
+
+UNAME
+Print operating system name
+uname -a   behave as all the option were specified
+
+DF
+df -- display free disk space
+df -Bm
+B blocksize m mega
+df —total
+
+TOP
+top -- display and update sorted information about processes
+-b  :Batch-mode operation
+In this
+            mode, top will not accept input and runs until the
+            iterations limit you've set with the `-n'
+top -bn1
+
+GREP
+grep -v,  --invert-match
+             Selected lines are those not matching any of the specified patterns.
+
+SORT
+orden alphabetique
+-u efface les doublons adjacent
+
+UNIQ
+The uniq utility reads the specified input_file comparing adjacent lines,
+  and writes a copy of each unique input line to the output_file.
+Repeated lines in the input will not be detected if they are not adjacent, 
+so it may be necessary to sort the files first.
+
+WC
+The wc utility displays the number of lines, words, and bytes contained
+in each input file, to the standard output. 
+A line is defined as a string of characters delimited by a \n character. 
+Word is defined as a string of characters delimited by white space
+     characters. 
+
+AWK 
+Awk  scans each input file for lines that match any of a set of patterns specified literally in prog or in one or more files specified as -f  progfile.   With  each  pattern there  can be an associated action that will be performed when a line of a file matches the pattern.  
+Each line is matched against the pattern portion of every pattern-action
+statement;  the associated action is performed for each matched pattern.  The file name - means the standard input. 
+ Any file of the form var=value is treated  as  an  assignment,  not a filename, and is executed at the time it would have been opened if it were  a filename.  
+The option -v followed by var=value is an assignment  to  be  done  before
+ prog  is  executed;  any number of -v options may be present.  The -F fs option defines
+       the input field separator to be the regular expression fs.
+
+       An input line is normally made up of fields separated by white  space,  or  by  regular
+       expression FS.  The fields are denoted $1, $2, ..., while $0 refers to the entire line.
+You can make use of variable NF which is set to the total number of fields in the input 
+
+       pram=$(free | awk '$1 == "Mem:" {printf("%.2f"), $3/$2*100}')
+%.2f ecrit seulment 2 chifres apres le .
