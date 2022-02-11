@@ -1,0 +1,69 @@
+SCRIPT
+
+sudo crontab -u root -e
+
+PARTITIONS
+lsblk
+
+VERIFIER INSTALATION
+dpkg -l | grep nomd’app
+
+UFW
+/usr/sbin/ufw status
+sudo grep Port /etc/ssh/sshd_config
+sudo ufw status numbered
+sudo ufw allow 32    “nro de port”
+sudo ufw delete
+
+SSH
+sudo systemctl status ssh
+ssh mpons@127.0.0.1 -p 4242
+
+HOSTNAME
+hostnamectl
+hostnamectl set-hostname <newhostname>
+sudo vim /etc/hosts
+sudo reboot
+
+SUDO (abréviation de substitute user do)
+sudo-v
+sudo visudo
+sudo vim /etc/sudoers s
+mkdir /var/log/sudo  “para que se guarden los logs”
+
+USER-GROUPS
+cut -d: -f1 /etc/passwd
+
+sudo adduser new_username
+
+sudo groupadd evaluant
+sudo usermod -aG evaluant new_username
+getent group user42
+groups
+
+
+PASSWORD
+sudo apt-get install libpam-pwquality
+sudo vim /etc/pam.d/common-password
+sudo vim /etc/login.defs
+
+chage -l mpons   // info d’expiration
+chage -m 2 mpons // change MIN DAYS pour changement
+chage -M 30 mpons //change MAX DAYS pour changement
+
+LE RESTE
+head -n 2 /etc/os-release
+/usr/sbin/aa-status
+ss -tunlp
+
+passwd -e sert à forcer l'expiration d'un mot de passe.
+difok ne marche pas sur root parce que il compare pas avec ton vieux pasw alors in le peut pas savoir
+
+
+Commandes definition
+
+dpkg package manage for Debian
+dpkg is a tool to install, build, remove and manage Debian
+       packages.
+dpkg -l 
+List packages matching given patterns
