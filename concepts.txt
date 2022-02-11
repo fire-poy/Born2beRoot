@@ -1,0 +1,38 @@
+Concepts
+
+WALL
+wall is a command-line utility that displays a message on the terminals of all logged-in users
+
+NET TOOLS
+
+
+Image bootdisc
+Telecharcher image iso de OS => Debian 11
+Verifier signature 
+Shasum -a 512 <filename>
+
+
+Changer miroir
+/etc/apt/sources. list
+ftp.ch.debian.org/debian/
+
+UDP 68
+C'est le port UDP 68 qui est un protocole de transfert non connecté ( pour ça le UNCONN ) qui s'occupe de récupérer son adresse IP sur le serveur DHCP (serveur qui s'occupe de donner des adresses IP )
+
+Snapshots
+another Oracle VM VirtualBox feature called snapshots, one can save a particular state of a virtual machine and revert back to that state, if necessary. This way, one can freely experiment with a computing environment. If something goes wrong, such as problems after installing software or infecting the guest with a virus, you can easily switch back to a previous snapshot and avoid the need of frequent backups and restores. 
+Any number of snapshots can be created, allowing you to travel back and forward in virtual machine time. You can delete snapshots while a VM is running to reclaim disk space. 
+
+PARTITION
+Il faut en effet définir les différentes portions des disques (ou « partitions ») qui accueilleront le système de fichiers de Linux et sa mémoire virtuelle (swap)
+
+Tout dans une seule partition. Toute l'arborescence du système Linux est stockée dans un seul système de fichiers, correspondant à la racine /. Ce partitionnement simple et robuste convient parfaitement pour des ordinateurs personnels ou mono-utilisateurs. En réalité, deux partitions verront le jour : la première abritera le système complet ; la seconde, la mémoire virtuelle. 
+ 
+Separate /home partition”, is similar, but splits the file hierarchy in two: one partition contains the Linux system (/), 
+and the second contains “home directories” (meaning user data, in files and subdirectories available under /home/). 
+
+Partitions /home, /var et /tmp séparées, convient pour les serveurs et les systèmes multi-utilisateurs. Elle découpe l'arborescence en de nombreuses partitions : en plus de la racine (/) et des comptes utilisateurs (/home/), elle prévoit des partitions pour les données des logiciels serveurs (/var/) et pour les fichiers temporaires (/tmp/). Ces divisions ont plusieurs avantages. Les utilisateurs ne pourront pas bloquer le serveur en consommant tout l'espace disque disponible (ils ne pourront remplir que /tmp/ et /home/). Les données des démons (et notamment les logs) ne pourront pas non plus bloquer le reste du système. 
+
+Le RAID est un ensemble de techniques de virtualisation du stockage permettant de répartir des données sur plusieurs disques durs afin d'améliorer soit les performances, soit la sécurité ou la tolérance aux pannes de l'ensemble du ou des systèmes. 
+
+El 1ro que creas es el 1ro de la lista
